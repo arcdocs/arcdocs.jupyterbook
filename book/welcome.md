@@ -7,11 +7,3 @@ You can find information on this site about how to use these services, request t
 | ![Advanced Research Computing compute racks in the server room. ](./assets/img/HPC1-1024x821.jpg) |
 | ---------------|
 | ARC Compute racks |
-
-## Getting started
-
-Some stuff about how to get started and links to the [getting started section](./getting_started/start) goes here.
-
-## Software
-
-How to use the module system
