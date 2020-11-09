@@ -20,6 +20,7 @@
     - file: getting_started/linuxbasics
     - file: getting_started/nobackup
     - file: getting_started/file_transfer
+    - file: getting_started/x2go
 
 
 # ===== Usage ==========================================
