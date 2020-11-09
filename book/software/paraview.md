@@ -6,10 +6,10 @@
 visualisation application, developed to be able to analyse large
 datasets. We show here how to start the program on our facilities;
 however, please refer to the project documentation for details on how to
-use the application itself. If you are using ARC3 use
-[X2GO](https://arc.leeds.ac.uk/using-the-systems/advanced-topics/remote-graphics-x2go/)
+use the application itself.  You can also use
+[X2GO](../getting_started/x2go)
 when you login and the images will render better and you will get rid of
-the OpenGL warnings that appear on ARC2.
+the OpenGL warnings that may appear.
 
 Although paraview is flexible in the way it is deployed, the simplest
 method of invoking it is to run these commands on a login node:
