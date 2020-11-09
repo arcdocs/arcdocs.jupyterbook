@@ -26,16 +26,16 @@ The main executables available are :
 |Executable               |Description
 |-------------------------|--------------------------
 |`mdrun`                  |single precision serial executable
-|`mdrun\_d`               |double precision serial executable
-|`mpirun mdrun\_mpi`      |single precision parallel MPI executable
-|`mpirun mdrun\_mpi\_d`   |double precision parallel MPI exectable
+|`mdrun_d`               |double precision serial executable
+|`mpirun mdrun_mpi`      |single precision parallel MPI executable
+|`mpirun mdrun_mpi_d`   |double precision parallel MPI exectable
 
 However, the naming convention for `Gromacs` versions below `4.6.3` are a little different:
 
 |Executable               |Description
 |-------------------------|--------------------------
 |`mdrun.MPI`              |single precision, parallel MPI executable
-|`mdrun\_d.MPI`           |double precision, parallel MPI executable
+|`mdrun_d.MPI`            |double precision, parallel MPI executable
 
 There are also single/double precision versions of the tools that come
 with the application, with the same naming scheme as above. For more
@@ -46,7 +46,7 @@ at the [Gromacs documentation](http://www.gromacs.org/Documentation).
 
 ### Serial execution
 
-An example script, `example\_serial.sh` , looks like:
+An example script, `example_serial.sh` , looks like:
 
     #!/bin/bash
     #$ -cwd -V 
@@ -54,24 +54,21 @@ An example script, `example\_serial.sh` , looks like:
     #$ -l h_rt=10:00:00
     mdrun_d  [...]
 
-This requests 10 hours of runtime, to run in the current directory(
-`-cwd` ) and using the
-current environment ( `-V` ),
+This requests 10 hours of runtime, to run in the current directory(`-cwd`) and using the
+current environment (`-V`),
 using the double precision version of mdrun, and where
 `[...]` represents the
 arguments to mdrun. More memory per core can be requested, 2Gb for
 instance, by adding the line `#$ -l h_vmem=2G` to the script. For more options look at
-[qsub
-options](https://arc.leeds.ac.uk/using-the-systems/why-have-a-scheduler/qsub-qrsh-usage/).
+[Batch jobs](../usage/batchjob).
 The script can be submitted with:
 
     $ qsub example_serial.sh
 
 ## Parallel execution
 
-For the parallel version, an example script,
-`example\parallel.sh` will
-take the form:
+For the parallel version, an example script, `example_parallel.sh` will take
+the form:
 
     #!/bin/bash
     #$ -cwd -V 
@@ -81,18 +78,13 @@ take the form:
     #$ -pe ib 4
     mpirun mdrun_mpi_d 
 
-This requests 10 hours of runtime, to run in the current directory(
-`-cwd` ), using the current
-environment ( `-V` ), running
-on 4 cores ( `-pe ib 4` ),
-using the double precision parallel version of mdrun, and where
-`<options>` represents the
-arguments to `mdrun` .
+This requests 10 hours of runtime, to run in the current directory(`-cwd`),
+using the current environment (`-V`), running on 4 cores (`-pe ib 4`), using
+the double precision parallel version of mdrun, and where `<options>`
+represents the arguments to `mdrun`.
 
-More memory per core can be requested, 2Gb for instance, by adding the
-line `#$ -l h_vmem=2G` to
-the script. For more options look at [qsub
-options](https://arc.leeds.ac.uk/using-the-systems/why-have-a-scheduler/qsub-qrsh-usage/).
+More memory per core can be requested, 2Gb for instance, by adding the line `#$
+-l h_vmem=2G` to the script. For more options look at [Batch jobs](../usage/batchjob).
 The script can be submitted with:
 
     $ qsub example_parallel.sh
