@@ -72,8 +72,7 @@ where:
     all available memory on the majority of the nodes.
 
 For more details about these and other available options please look at
-the [qrsh
-page](https://arc.leeds.ac.uk/using-the-systems/why-have-a-scheduler/advanced-sge-running-interactive-jobs-using-qrsh/).
+the page on [Interactive jobs](../usage/interactive).
 
 ## Batch execution
 
@@ -111,5 +110,4 @@ The job can then be submitted to the queuing system using the command:
     qsub stata_sub_example.sh
 
 For more details on options used above and some of the other options
-available please look at the [qsub
-page](https://arc.leeds.ac.uk/using-the-systems/why-have-a-scheduler/qsub-qrsh-usage/).
+available please look at the page on [Batch jobs](../usage/batchjob).
