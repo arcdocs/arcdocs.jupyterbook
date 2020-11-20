@@ -27,8 +27,8 @@ $ nvidia-smi -L
 
 The ARC3 system is the first cluster at Leeds to include GPU accelerator technologies. These include:
 
-- 2 nodes each with 24 cores, 128GB of system memory, a hard disk drive within the node with 800GB of storage and 2 x NVIDIA K80s.
-- 6 nodes each with 24 cores, 256GB of system memory, a hard disk drive within the node with 800GB of storage and 4 x NVIDIA P100s
+- 2 nodes each with 24 cores, 128GB of system memory, a hard disk drive within the node with 800GB capacity and 2 x NVIDIA K80 24Gbytes
+- 6 nodes each with 24 cores, 256GB of system memory, an SSD within the node with 650GB capacity and 4 x NVIDIA P100 12Gbytes
 
 ### Usage
 
@@ -84,7 +84,7 @@ Where <cards_per_compute_node> should be set to 1, 2, 3 or 4.
 
 The ARC4 system also comes with the following GPU resources:
 
-- 3 nodes each with 40 cores, 192GB of system memory, a hard disk drive within the node with 800GB of storage and 4 x NVIDIA V100 GPUs.
+- 3 nodes each with 40 cores, 192GB of system memory, an SSD within the node with 128GB capacity and 4 x NVIDIA V100 32Gbytes
 
 ### Usage
 
