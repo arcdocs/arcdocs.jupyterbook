@@ -326,7 +326,7 @@ You will then be taken to the University Sign in page:
 
 Once you've authorised access to your OneDrive you can close the browser window and go back to the Rclone configuration interface. Now enter your account type (`1` for the university OneDrive Business accounts):
 
-```bash
+```
 If your browser doesn't open automatically go to the following link: http://127.0.0.1:53682/auth
 Log in and authorize rclone for access
 Waiting for code...
@@ -456,7 +456,7 @@ Total usage: 3.611G, Objects: 853
 
 Get help on rclone:
 
-```bash
+```
 $ rclone help
 Usage:
   rclone [flags]
