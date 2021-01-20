@@ -48,7 +48,7 @@ For a simple script that will run an analysis on a single core use the following
 #$ -m be
 #$ -cwd  -V
 module add abaqus
-export LM_LICENSE_FILE=@:$LM_LICENSE_FILE
+export LM_LICENSE_FILE=<license_port>@<license_server>:$LM_LICENSE_FILE
 abaqus memory=<amount_of_RAM_abaqus> input=<input_file> job=<job_name> scratch="<nobackup_directory>" int
 ```
 
@@ -84,11 +84,10 @@ To make use of several cpu cores to run your analysis use a script file in the f
 #$ -l h_rt=<run_time>
 #$ -l h_vmem=<amount_of_RAM_queue>
 #$ -m be
-#$ -M your@email_address
 #$ -pe smp <number_cores>
 #$ -cwd  -V
 module add abaqus
-export LM_LICENSE_FILE=@:$LM_LICENSE_FILE
+export LM_LICENSE_FILE=<license_port>@<license_server>:$LM_LICENSE_FILE
 abaqus memory=<amount_of_RAM_abaqus> cpus=$NSLOTS input=<input_file> job=<job_name> mp_mode=threads scratch="<nobackup_directory>" int
 ```
 
@@ -112,11 +111,10 @@ file `input.inp` :
 #$ -l h_rt=4:00:00
 #$ -l h_vmem=1500M
 #$ -m be
-#$ -M me@leeds.ac.uk
 #$ -pe smp 8
 #$ -cwd  -V
 module add abaqus
-export LM_LICENSE_FILE=@license_server>
+export LM_LICENSE_FILE=<license_port>@<license_server>:$LM_LICENSE_FILE
 abaqus memory=12000mb cpus=$NSLOTS input=input.inp job=input mp_mode=threads scratch="/nobackup/example-user/" int
 ```
 
@@ -130,10 +128,9 @@ For example:
 #$ -l h_rt=4:00:00
 #$ -l h_vmem=1500M
 #$ -m be
-#$ -M your@email_address
 #$ -cwd  -V
 module add abaqus
-export LM_LICENSE_FILE=@license_server>:$LM_LICENSE_FILE
+export LM_LICENSE_FILE=<license_port>@<license_server>:$LM_LICENSE_FILE
 abaqus memory=12000mb input=input.inp job=input user=exampleroutine scratch="/nobackup/example-user" int
 ```
 
