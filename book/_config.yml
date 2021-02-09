@@ -20,7 +20,7 @@ html:
   use_edit_page_button: true
   baseurl                   : "https://arcdocs.github.io/arcdocs-jupyterbook/"  # The base URL where your book will be hosted. Used for creating image previews and social links. e.g.: https://mypage.com/mybook/
   navbar_footer_text        :
-    'Visit the <a href="https://arcleeds.github.io/">Research Computing Home Site</a>
+    'Visit the <a href="https://arc.leeds.ac.uk">Research Computing Home Site</a>
     <div>
     This book is powered by <a href="https://jupyterbook.org">Jupyter Book</a>
     </div>'  # Will be displayed underneath the left navbar.

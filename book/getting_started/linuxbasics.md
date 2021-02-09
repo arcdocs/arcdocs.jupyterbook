@@ -8,7 +8,7 @@ The command line allows you to interact with the operating system through a seri
 
 ## Linux Tutorial
 
-If you're totally new to Linux and the command line strongly encourage you to attend our training sessions [HPC0: Introduction to Linux](https://arcleeds.github.io/training/courses/hpc0/) and [HPC1: Introduction to HPC at Leeds](https://arcleeds.github.io/training/courses/hpc1/). These run throughout the year and provide a good basic introduction to both Linux and how to use the HPC at Leeds. If you'd like to learn more about Linux and the command line in your own time we also strongly recommend the Software Carpentries lesson on the [Unix shell](http://swcarpentry.github.io/shell-novice/) which offers a step-by-step tutorial you can take at your own pace.
+If you're totally new to Linux and the command line strongly encourage you to attend our training sessions [HPC0: Introduction to Linux](https://arc.leeds.ac.uk/training/courses/hpc0/) and [HPC1: Introduction to HPC at Leeds](https://arc.leeds.ac.uk/training/courses/hpc1/). These run throughout the year and provide a good basic introduction to both Linux and how to use the HPC at Leeds. If you'd like to learn more about Linux and the command line in your own time we also strongly recommend the Software Carpentries lesson on the [Unix shell](http://swcarpentry.github.io/shell-novice/) which offers a step-by-step tutorial you can take at your own pace.
 
 ## Some helpful shell commands
 

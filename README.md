@@ -1,8 +1,8 @@
 # Advanced Research Computing Documentation
 
-This is the repository for the documentation for the University of Leeds HPC systems (ARC3 and ARC4). This is managed by the University of Leeds [Research Computing Team](https://arcleeds.github.io).
+This is the repository for the documentation for the University of Leeds HPC systems (ARC3 and ARC4). This is managed by the University of Leeds [Research Computing Team](https://arc.leeds.ac.uk).
 
-This repository automatically builds and deploys html content onto the repository github pages domain https://arcdocs.github.io/
+This repository automatically builds and deploys html content onto the repository github pages domain https://arc.leeds.ac.uk
 
 ## Repository branch organisation
 
