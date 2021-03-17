@@ -103,11 +103,11 @@ To avoid this you can use the following steps to move your `.conda` directory to
 ```bash
 $ cd ~
 
-# create this directory if it doesn't already exist
-$ mkdir .conda
+# create these directories if they don't already exist
+$ mkdir -p .conda /nobackup/$USER
 
 # move the .conda directory to your nobackup directory (here represented as $USER)
-$ mv ~/.conda /nobackup/$USER
+$ mv ~/.conda /nobackup/$USER/
 
 # create a symlink between your .conda directory you've just moved
 # back into your home directory
