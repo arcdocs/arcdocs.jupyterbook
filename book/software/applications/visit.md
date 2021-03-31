@@ -2,7 +2,7 @@
 
 ## Introduction
 
-[VisIt](https://visit.llnl.gov/) is a data analysis and visualisation
+[VisIt](https://visit.llnl.gov) is a data analysis and visualisation
 application, developed to be able to analyse large datasets. We show
 here how to start the program on our facilities; however, please refer
 to the project documentation for details on how to use the application
@@ -45,17 +45,16 @@ not to tackle large pieces of work on the login nodes.
 Recommended for larger pieces of work:
 
     $ module load visit
-    $ qrsh -cwd -V -l h_rt= -l h_vmem= visit
+    $ qrsh -cwd -V -l h_rt=<hh:mm:ss> -l h_vmem=<vmem> visit
 
 Or, where using more than one cpu is useful, to launch visit in parallel
-(*note: unavailable for version 2.6.3*):
 
     $ module load visit
-    $ qrsh -cwd -V -l h_rt= -l h_vmem= -pe ib  visit -np 
+    $ qrsh -cwd -V -l h_rt=<hh:mm:ss> -l h_vmem=<vmem> -pe ib <num> visit -np <num>
 
-In the above commands, hh:mm:ss is the length of real time the program
-will be run for, vmem is the amount of memory required per core (e.g.
-"1G" for 1 GB RAM), and num is the number of cores required (please note
+In the above commands, <hh:mm:ss> is the length of real time the program
+will be run for, <vmem> is the amount of memory required per core (e.g.
+"1G" for 1 GB RAM), and <num> is the number of cores required (please note
 it appears twice in the command).
 
 ## Running VisIT on your workstation, offload storage and processing to the ARC systems
@@ -65,7 +64,7 @@ sluggish, or where the best possible performance is required.
 
 Select a version number from the list of installed versions of visit,
 then download and install a copy of that version appropriate to your
-machine from <https://visit.llnl.gov/>. The list of installed versions
+machine from <https://visit.llnl.gov>. The list of installed versions
 is provided by executing the following command on the cluster:
 
     $ module avail visit
@@ -100,40 +99,40 @@ Start VisIt once again and select the menu item `Options->Host Profiles...` This
 window, which should contain an entry on the left hand side for each of
 the host files saved earlier. For each host in turn:
 
-1\. Log into the cluster. Find the location of VisIT by loading the
+1. Log into the cluster. Find the location of VisIT by loading the
 module for the version you want and examining a variable.
 
     module load visit/
     echo $VISIT_HOME
 
-2\. Highlight the hostname by clicking on it. On the right hand side,\
+2. Highlight the hostname by clicking on it. On the right hand side,\
 look for the configuration item `Path to VisIt
 installation` . If you cannot
 see it, click on the `Machines` and `Host Settings` tabs. Enter the location string found in step (1) above.
 
-3\. Close the window with the `Dismiss` button
+3. Close the window with the `Dismiss` button
 
-4\. Save settings with the `Options->Save Settings` menu item
+4. Save settings with the `Options->Save Settings` menu item
 
 ### Launch remote execution
 
-1\. With VisIt running on your workstation, select menu item `File->Open file...` to open the `File open` window.
+1. With VisIt running on your workstation, select menu item `File->Open file...` to open the `File open` window.
 
-2\. There will be a drop-down text box marked `Host` . Click on its arrow, which should show a
+2. There will be a drop-down text box marked `Host` . Click on its arrow, which should show a
 list including `localhost`
 (your workstation) and each of the clusters you configured in the steps
 above. Select the cluster you wish to use.
 
-3\. The `File open` window
+3. The `File open` window
 should now show files on the cluster. Select a file visit understands
 and press `OK`
 
-4\. A Select options for `<clustername>` should appear. Select `serial (login
+4. A Select options for `<clustername>` should appear. Select `serial (login
 node)`S for a single process
 on a login node (please note that login nodes are shared between all
 users of the cluster -- it should only be used for short or undemanding
 pieces of work), or `mpi (batch queue)` to launch visit on the cluster's compute nodes through
-the batch queue system (*note: unavailable for version 2.6.3*). When
+the batch queue system. When
 launching through the batch queues, specify the number of cores required
 into `Num procs` , the length
 of time the resources are required into [Time limit] and any other batch queue options into
@@ -160,4 +159,4 @@ example:
 
     $ module load visit
     $ echo $VISIT_BUILD_MODULES
-    bit/64 gnu/4.9.1 openmpi/1.6.5 mkl/11.2
+    gnu/native openmpi mkl qt
