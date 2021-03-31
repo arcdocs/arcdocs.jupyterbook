@@ -20,5 +20,5 @@ This page is an overview of the applications section of software available on th
 - [Paraview](./paraview)
 - [R](./R)
 - [Stata](./stata)
-- [Visit](./visit)
+- [VisIt](./visit)
 - [VMD](./vmd)
