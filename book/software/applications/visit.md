@@ -81,11 +81,8 @@ number of directories.
 
 Then, download the files corresponding to the cluster you wish to use:
 
-{download}`host_arc2 <../../assets/wp/2016/02/host_arc2.xml>`
-
-{download}`host_polaris <../../assets/wp/2016/02/host_polaris.xml>`
-
-{download}`host_marc1 <../../assets/wp/2016/02/host_marc1.xml>`
+{download}`host_arc3 <../../assets/downloads/software/applications/visit/host_arc3.xml>`
+{download}`host_arc4 <../../assets/downloads/software/applications/visit/host_arc4.xml>`
 
 On a Linux, Unix or Mac platform, please save these files to your
 `.visit/hosts/` directory,
