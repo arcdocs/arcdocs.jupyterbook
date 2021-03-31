@@ -79,16 +79,13 @@ institutions. Please select `None` .
 Once installed, start the program and then exit it: this will create a
 number of directories.
 
-Then, download the files corresponding to the cluster you wish to use --
-for each, rename the file extension from `.txt` to `.xml` (unfortunately our hosting provider does not allow
-`.xml` files on the
-website!):
+Then, download the files corresponding to the cluster you wish to use:
 
-[host\_arc2](https://arc.leeds.ac.uk/wp-content/uploads/2016/02/host_arc2.txt)
+{download}`host_arc2 <../../assets/wp/2016/02/host_arc2.xml>`
 
-[host\_polaris](https://arc.leeds.ac.uk/wp-content/uploads/2016/02/host_polaris.txt)
+{download}`host_polaris <../../assets/wp/2016/02/host_polaris.xml>`
 
-[host\_marc1](https://arc.leeds.ac.uk/wp-content/uploads/2016/02/host_marc1.txt)
+{download}`host_marc1 <../../assets/wp/2016/02/host_marc1.xml>`
 
 On a Linux, Unix or Mac platform, please save these files to your
 `.visit/hosts/` directory,

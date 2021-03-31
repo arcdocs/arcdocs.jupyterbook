@@ -84,7 +84,7 @@ This can be submitted to the queuing system using:
 $ qsub runR.sh
 ```
 
-The files for a simple R test example are available to download in this tar file, [R.tar](https://arc.leeds.ac.uk/wp-content/uploads/2016/01/R.tar).
+The files for a simple R test example are available to download in this tar file, {download}`R.tar <../../assets/wp/2016/01/R.tar>`.
 
 ## Installing R packages
 
