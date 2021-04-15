@@ -60,11 +60,21 @@ In order to connect to ARC when you're off campus you'll need to do some extra c
 
 4. Within this file include the following contents where `USERNAME` is replaced by your university username
 
-    ```bash
+    ```
     Host *.leeds.ac.uk !remote-access.leeds.ac.uk
     ProxyJump USERNAME@remote-access.leeds.ac.uk
     User USERNAME
     ```
+
+    ````{admonition} Old version of SSH
+    If you're using an old version of OpenSSH, you may get an error: `Bad configuration option: ProxyJump`.  In this case you'll want to use this instead:
+
+    ```
+    Host *.leeds.ac.uk !remote-access.leeds.ac.uk
+    ProxyCommand ssh -W %h:%p USERNAME@remote-access.leeds.ac.uk
+    User USERNAME
+    ```
+    ````
 
 5. Save this file and your configuration is all set up!
 
