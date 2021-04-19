@@ -106,7 +106,7 @@ $ qrsh -cwd -V -l h_rt=<hh:mm:ss> -l h_vmem=<vmem> -pe ib <np> fluent <dim>
 In the above commands `hh:mm:ss` is the length of real-time the shell will exist for and `np` is the number of processes requested. `dim` is the dimension/precision of the fluent process (e.g. 3ddp for 3-D double precision). E.g. the to launch fluent for 6 hours on 16 processors:
 
 ```bash
-$ qrsh -cwd -V -l h_rt=6:00:00 -pe ib 16 fluent 2d
+$ qrsh -cwd -V -l h_rt=6:00:00 -pe ib 16 fluent 2d -rsh
 ```
 
 ### Running a large mesh interactively
@@ -144,7 +144,7 @@ Then a job submission script (`fluent_para.sh`) should be created, that requests
 module add ansys/2020R2
 export ANSYSLMD_LICENSE_FILE=<LICENSESTRING>
 #Launch the executable
-fluent -g -i test_para.jou 3ddp
+fluent -g -i test_para.jou 3ddp -rsh
 ```
 
 In this case, the 3-dimensional, double precision module is launched on 32 processors. The `-g` option will suppress the GUI and `-i` specifies the name of the input journal file. The file can be submitted to the queue by typing:
@@ -171,7 +171,7 @@ Fluent supports the use of GPUs, although we've not currently seen significant b
 module add ansys/2020R2
 export ANSYSLMD_LICENSE_FILE=<LICENSESTRING>
 #Launch the executable
-fluent -g -i -gpgpu=4 test_para.jou 3ddp
+fluent -g -i -gpgpu=4 test_para.jou 3ddp -rsh
 ```
 
 ## Running with old version of Fluent v15 or below
@@ -206,7 +206,7 @@ There are also known inefficiencies when running fluent on part nodes on ARC.  F
 module add ansys/2020R2
 export ANSYSLMD_LICENSE_FILE=<LICENSESTRING>
 #Launch the executable
-fluent -g -i test_para.jou 3ddp
+fluent -g -i test_para.jou 3ddp -rsh
 ```
 
 You will wait slightly longer for a whole node than for the previous allocation method, but your code may run significantly faster.
