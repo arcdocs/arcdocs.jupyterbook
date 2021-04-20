@@ -100,7 +100,7 @@ There are three ways of launching Fluent to work in parallel:
 To launch an [interactive session](../../../usage/interactive) on many compute nodes, load the ansys module and type the following at the command prompt:
 
 ```bash
-$ qrsh -cwd -V -l h_rt=<hh:mm:ss> -l h_vmem=<vmem> -pe ib <np> fluent <dim>
+$ qrsh -cwd -V -l h_rt=<hh:mm:ss> -l h_vmem=<vmem> -pe ib <np> fluent <dim> -rsh
 ```
 
 In the above commands `hh:mm:ss` is the length of real-time the shell will exist for and `np` is the number of processes requested. `dim` is the dimension/precision of the fluent process (e.g. 3ddp for 3-D double precision). E.g. the to launch fluent for 6 hours on 16 processors:
@@ -181,7 +181,7 @@ When running Fluent v15 or below in parallel batch mode, additional parameters n
 Taking the script in the previous section as an example, the line:
 
 ```bash
-fluent -g -i test_para.jou 3ddp
+fluent -g -i test_para.jou 3ddp -rsh
 ```
 
 Should be switched to:
