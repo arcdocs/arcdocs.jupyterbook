@@ -49,7 +49,7 @@ For a simple script that will run an analysis on a single core use the following
 #$ -cwd  -V
 module add abaqus
 export LM_LICENSE_FILE=<license_port>@<license_server>:$LM_LICENSE_FILE
-abaqus memory=<amount_of_RAM_abaqus> input=<input_file> job=<job_name> scratch="<nobackup_directory>" int
+abaqus memory=<amount_of_RAM_abaqus> input=<input_file> job=<job_name> int
 ```
 
 `<run_time>` is the amount of time you are requesting from the queue, entered in the format `hh:mm:ss` . If the job finishes before this it is fine but if the job takes longer it will cancel when this time runs out so be sure to give more time than you think you will need to avoid jobs failing midway through, keep in mind however that requesting more time makes scheduling the jobs more difficult and the maximum run time is 48 hours.
@@ -88,7 +88,7 @@ To make use of several cpu cores to run your analysis use a script file in the f
 #$ -cwd  -V
 module add abaqus
 export LM_LICENSE_FILE=<license_port>@<license_server>:$LM_LICENSE_FILE
-abaqus memory=<amount_of_RAM_abaqus> cpus=$NSLOTS input=<input_file> job=<job_name> mp_mode=threads scratch="<nobackup_directory>" int
+abaqus memory=<amount_of_RAM_abaqus> cpus=$NSLOTS input=<input_file> job=<job_name> mp_mode=threads int
 ```
 
 `<number_cores>` is the number of cores you are requesting to be used for the analysis. `$NSLOTS` is an environmental variable, that is automatically set to equal `<number_cores>` , and is used to pass the number of cores to abaqus. Note that there will now be a difference between the two memory requests, as described above.
@@ -115,7 +115,7 @@ file `input.inp` :
 #$ -cwd  -V
 module add abaqus
 export LM_LICENSE_FILE=<license_port>@<license_server>:$LM_LICENSE_FILE
-abaqus memory=12000mb cpus=$NSLOTS input=input.inp job=input mp_mode=threads scratch="/nobackup/example-user/" int
+abaqus memory=12000mb cpus=$NSLOTS input=input.inp job=input mp_mode=threads int
 ```
 
 ## User Defined Fortran subroutines
@@ -131,10 +131,27 @@ For example:
 #$ -cwd  -V
 module add abaqus
 export LM_LICENSE_FILE=<license_port>@<license_server>:$LM_LICENSE_FILE
-abaqus memory=12000mb input=input.inp job=input user=exampleroutine scratch="/nobackup/example-user" int
+abaqus memory=12000mb input=input.inp job=input user=exampleroutine int
 ```
 
 This ensures that **both** Abaqus and the system default Intel Fortran compiler are able to access their relevant licence servers.
+
+## Scratch disk space
+
+By default abaqus uses the fast local storage of nodes for scratch space.  1Gbyte per core is allocated as standard, but you can increase this as required.  For example, to allocate 4Gbytes per core:
+
+```bash
+#$ -l disk=4G
+```
+
+Details on exactly how much local storage is available for your jobs can be found on the [Scratch](../../usage/scratch) page.
+
+If you need more than is available on a local node, you can use /nobackup.  You do this with the scratch parameter to abaqus, e.g.:
+
+```bash
+mkdir -p /nobackup/$USER/scratch
+abaqus memory=12000mb input=input.inp job=input user=exampleroutine scratch="/nobackup/$USER/scratch" in
+```
 
 ## Checkpointing
 
@@ -152,7 +169,7 @@ This will create a **restart** file (.res file extension) from which a job that 
 
 2. Run the restart analysis with
 
-    ```
+    ```bash
     abaqus job=jobName oldjob=oldjobName ...
     ```
 
