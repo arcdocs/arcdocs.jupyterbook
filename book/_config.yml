@@ -42,3 +42,7 @@ repository:
 latex:
   latex_documents:
     targetname: leedsarcdocs.tex
+
+sphinx:
+  config:
+    language: en
